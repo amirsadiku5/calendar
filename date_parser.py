@@ -22,6 +22,13 @@ def date_str_to_tuple(date_string: str):
 
 
 def _is_valid_date(day, month, year):
+    """
+    Determines whether a date is valid
+    :param day: Day of the date
+    :param month: Month of the date
+    :param year: Year of the date
+    :return: True if the date is valid, False otherwise
+    """
     if not 1 <= month <= 12:
         return False
 

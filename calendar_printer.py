@@ -3,6 +3,18 @@ import date_calculator as dc
 
 
 def make_calendar_string(month, year):
+    """
+    Creates a string representing the given month formatted in the following format:
+      M  T  W  T  F  S  S
+      1  2  3  4  5  6  7
+      8  9 10 11 12 13 14
+     15 16 17 18 19 20 21
+     22 23 24 25 26 27 28
+     29 30 31
+    :param month: Month to get the string of (1 to 12)
+    :param year: Year to get the month from
+    :return: The stringified version of the given month
+    """
     days_string = 'MTWTFSS'
     top_string = ''.join(_format(c) for c in days_string)
 

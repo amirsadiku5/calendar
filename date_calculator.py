@@ -6,7 +6,7 @@ _REFERENCE_DATE_WEEKDAY = 0
 
 def calculate_weekday(day, month, year):
     """
-    Calculates the weekday (0 to 6) corresponding to the given date tuple (day, month, year)
+    Calculates the weekday (0 to 6) corresponding to the given date
     :param day: The day of the month
     :param month: The month
     :param year: The year
@@ -16,6 +16,13 @@ def calculate_weekday(day, month, year):
 
 
 def _days_since_reference_date(day, month, year):
+    """
+    Calculates the number of days since the reference date
+    :param day: Day of the month
+    :param month: Month of the year
+    :param year: Year
+    :return: The number of dates since the reference date. May be negative.
+    """
     ref_year = _REFERENCE_DATE[2]
 
     if year >= ref_year:
@@ -29,6 +36,13 @@ def _days_since_reference_date(day, month, year):
 
 
 def _days_since_first_january(day, month, year):
+    """
+    Calculates the number of days since the 1st of January for a given date
+    :param day: Day of the month
+    :param month: Month of the year
+    :param year: Year
+    :return: The number of days since the 1st of January
+    """
     month_to_days = yearinfo.get_month_to_day_dict(year)
 
     day_count = 0
@@ -39,6 +53,12 @@ def _days_since_first_january(day, month, year):
 
 
 def _leap_years_in_range(first_year, second_year):
+    """
+    Calculates the number of leap years in the given range of years
+    :param first_year: Start of the year range
+    :param second_year: End of the year range
+    :return: Number of leap years in the given range
+    """
     lowest_year, highest_year = sorted([first_year, second_year])
     count = 0
     for year in range(lowest_year, highest_year):
