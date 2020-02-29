@@ -51,7 +51,7 @@ if __name__ == '__main__':
         print('2) Choose a month of a year to see the full month calendar')
         print('3) Exit')
         option = input('Choose an option number: ')
-        if not option.isnumeric() or not (1 <= int(option) <= 2):
+        if not option.isnumeric() or not (1 <= int(option) <= 3):
             _wait_for_restart('Invalid option')
             continue
 
